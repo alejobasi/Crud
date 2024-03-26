@@ -1,7 +1,6 @@
-import React from 'react';
+import React from "react";
 
 const CrudTableRow = ({ el, setDataToEdit, deleteData }) => {
-
   let { name, constellation, id } = el;
 
   return (
@@ -9,11 +8,11 @@ const CrudTableRow = ({ el, setDataToEdit, deleteData }) => {
       <td>{name}</td>
       <td>{constellation}</td>
       <td>
-        <button onClick={() => setDataToEdit(el)}>Editar</button >
-        <button onClick={() => deleteData(id)} >Eliminar</button>
+        <button onClick={() => setDataToEdit(el)}>Editar</button>
+        <button onClick={() => deleteData(id)}>Eliminar</button>
       </td>
     </tr>
   );
-}
+};
 
 export default CrudTableRow;

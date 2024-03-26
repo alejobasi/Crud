@@ -5,18 +5,18 @@ html {
 }
 
 *,
-*::before,
-*::after {
+*:after,
+*::before {
   box-sizing: inherit;
 }
 
 input[type="text"] {
   border: thin solid #ffffff;
-  border-radius: 5px;
-  padding: 20px;
-  margin: 10px;
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 1rem;
   outline: none;
   display: block;
   line-height: 1;
@@ -26,20 +26,24 @@ input[type="text"] {
 button,
 input[type="submit"],
 input[type="reset"] {
-  border: none;
-  border-radius: 5px;
-  padding: 20px;
-  margin: 10px;
+  border: thin solid #444;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem 0 0;
   width: 100%;
   font-size: 1.5rem;
   outline: none;
-  display: block;
+  background-color: #eee;
+  display: inline-block;
   line-height: 1;
   background-color: #ffffff;
   cursor: pointer;
-  color: #333333;
+  color: #444;
   text-align: center;
   vertical-align: middle;
+  font-weight: bold;
+  text-transform: none;
+  text-decoration: none;
 
 
 }
