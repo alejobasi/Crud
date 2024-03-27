@@ -22,12 +22,12 @@ export const helpHttp = () => {
       .then((res) =>
         res.ok
           ? res.json()
-          : Promise.reject({
-            err: true,
-            status: res.status || "00",
-            statusText: res.statusText || "Ocurrió un error",
-          })
-      )
+          : Promise.reject(res))
+      .then(json => json ? json : Promise.reject('Empty response'))
+      .catch(err => {
+        console.error(`Error in HTTP request: ${err}`);
+        return null;
+      })
       .catch((err) => err);
   };
 
