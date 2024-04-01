@@ -1,52 +1,54 @@
-import React, { useState } from 'react';
-import SelectList from './SelectList';
+import React, { useState } from "react";
+import SelectList from "./SelectList";
 
 const SelectsAnidados = () => {
   const [state, setState] = useState("");
   const [town, setTown] = useState("");
   const [suburb, setSuburb] = useState("");
+
+  const TOKEN = "b7bb6443-78db-4dc9-ba3b-07340f920118";
+
   return (
     <div>
       <h2>Selects Anidados</h2>
       <h3>Mexico</h3>
 
       <SelectList
-        title="estados"
-        url=""
+        title="estado"
+        url={`https://api.copomex.com/query/get_estados?token=${TOKEN}`}
         handleChange={(e) => {
-          setState(e.target.value)
+          setState(e.target.value);
         }}
       />
 
       {state && (
         <SelectList
           title="municipios"
-          url=""
+          url={`https://api.copomex.com/query/get_municipio_por_estado/${state}?token=${TOKEN} `}
           handleChange={(e) => {
-            setTown(e.target.value)
+            setTown(e.target.value);
           }}
         />
       )}
 
       {town && (
         <SelectList
-          title="colonias"
-          url=""
+          title="colonia"
+          url={`https://api.copomex.com/query/get_colonia_por_municipio/${town}?token=${TOKEN}`}
           handleChange={(e) => {
-            setSuburb(e.target.value)
+            setSuburb(e.target.value);
           }}
         />
       )}
 
-
-
       <pre>
         <code>
+          Si arriba no hay select es por la api <br />
           {state}-{town}-{suburb}
         </code>
       </pre>
     </div>
   );
-}
+};
 
 export default SelectsAnidados;

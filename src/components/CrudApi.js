@@ -19,7 +19,7 @@ const CrudApi = () => {
     helpHttp()
       .get(url)
       .then((res) => {
-        console.log(res);
+        //  console.log(res);
         if (!res.err) {
           setDb(res);
           setError(null);
@@ -115,13 +115,13 @@ const CrudApi = () => {
             bgColor="#dc3545"
           />
         )}
-        {db &&
+        {db && (
           <CrudTable
             data={db}
             setDataToEdit={setDataToEdit}
             deleteData={deleteData}
           />
-        }
+        )}
       </article>
     </div>
   );
