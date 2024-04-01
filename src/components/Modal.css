@@ -6,12 +6,12 @@
   width: 100%;
   min-height: 100vh;
   background-color: rgb(0, 0, 0, 0.75);
-  /* display: none; */
+  display: none;
   justify-content: center;
   align-items: center;
 }
 
-.model.is-open {
+.modal.is-open {
   display: flex;
 }
 
